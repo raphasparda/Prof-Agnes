@@ -1,8 +1,8 @@
 <div align="center">
 
-# Prof. Agnes
+# Prof. Agnes `v1.0`
 
-**Mentora de Java com IA — do júnior ao pleno.**
+**Mentora de Java com IA. Do júnior ao pleno.**
 
 <br>
 
@@ -24,11 +24,17 @@
 
 ## Sobre o projeto
 
-Agnes é uma mentora de Java com inteligência artificial. Diferente de chatbots genéricos que tentam responder sobre qualquer coisa, ela foi projetada com um único propósito: ajudar desenvolvedores Java a evoluir do nível júnior ao pleno.
+Agnes é uma mentora de Java com inteligência artificial. Diferente de chatbots genéricos que respondem sobre qualquer coisa, ela foi construída com um propósito só: ajudar quem quer aprender Java de verdade, desde o primeiro Hello World até arquiteturas profissionais.
 
-O nome vem de homenagem — e a personalidade também. Ela é acolhedora, tem paciência de sobra, e sabe dosar entre explicação didática e profundidade técnica. Se o aluno manda um "o que é POO?", ela explica com analogias. Se manda "me explica type erasure em generics", ela vai fundo.
+O projeto nasceu pensando em três perfis: o **estudante** que está começando e não sabe por onde ir, o **profissional** da área que quer evoluir tecnicamente, e a **pessoa curiosa** que ouviu falar de Java e quer entender do que se trata. Agnes recebe todo mundo do mesmo jeito: com paciência.
 
-A ideia nasceu de uma frustração real: conteúdo de Java na internet é disperso, genérico e geralmente ignora o contexto de quem está perguntando. Agnes resolve isso sendo uma fonte centralizada que se adapta ao nível de quem conversa com ela.
+---
+
+## De onde vem o nome e o visual
+
+A paleta de cores, a personalidade acolhedora e o mascote hexagonal foram todos inspirados na minha gata de estimação. A escolha foi proposital. O mundo tech tem uma tendência forte de visual agressivo, temas escuros, interfaces intimidadoras. Agnes vai na direção oposta: tons quentes, traços suaves e uma identidade que passa conforto antes de qualquer outra coisa.
+
+A ideia é que quem abre a plataforma se sinta convidado a ficar. Quem está começando em programação já carrega insegurança o suficiente. O ambiente de estudo não precisa contribuir pra isso.
 
 ---
 
@@ -87,15 +93,15 @@ A ideia nasceu de uma frustração real: conteúdo de Java na internet é disper
 
 ## O que faz ela diferente
 
-A maioria dos projetos de portfólio com IA são wrappers genéricos que repassam prompts sem nenhum tratamento. Agnes foi pensada como produto:
+A maioria dos projetos de portfólio com IA são wrappers que repassam prompts crus e devolvem o resultado. Agnes foi pensada como produto.
 
-**Escopo fechado** — ela só fala de Java. Perguntou de Python? Ela recusa educadamente e redireciona. Isso não é limitação, é decisão de design. Um mentor especialista é mais útil que um generalista raso.
+**Escopo fechado.** Ela só fala de Java. Perguntou de Python? Ela recusa educadamente e redireciona. Isso não é limitação, é decisão de design. Um mentor especialista é mais útil que um generalista raso.
 
-**Adaptação ao nível** — cada tópico é classificado com indicadores de senioridade (Júnior, Pleno, Avançado). Ela calibra a profundidade da resposta pelo nível que o aluno demonstra na conversa.
+**Adaptação ao nível.** Cada tópico é classificado com indicadores de senioridade (Júnior, Pleno, Avançado). Ela calibra a profundidade da resposta pelo nível que o aluno demonstra na conversa.
 
-**Segurança de verdade** — o `ServicoGuardaFiltro` não é um if/else. É um serviço completo com regex patterns bilíngues, normalização de input, e logging de auditoria. Tentativas de jailbreak são bloqueadas silenciosamente sem expor informações.
+**Segurança de verdade.** O `ServicoGuardaFiltro` não é um if/else. É um serviço completo com regex bilíngues, normalização de input e logging de auditoria. Tentativas de jailbreak são bloqueadas silenciosamente sem expor informações.
 
-**Persistência real** — conversas ficam salvas em PostgreSQL. O aluno pode voltar dias depois e continuar de onde parou. O contexto é reconstruído com as últimas 20 mensagens do histórico.
+**Persistência real.** Conversas ficam salvas em PostgreSQL. O aluno pode voltar dias depois e continuar de onde parou. O contexto é reconstruído com as últimas 20 mensagens do histórico.
 
 ---
 
@@ -104,9 +110,9 @@ A maioria dos projetos de portfólio com IA são wrappers genéricos que repassa
 | Perfil | O que ele ganha |
 |---|---|
 | Estudante começando em Java | Explicações do zero, com exemplos compiláveis e analogias |
-| Dev júnior migrando pra pleno | Profundidade em Spring Boot, JPA, Design Patterns, SOLID |
+| Dev júnior querendo virar pleno | Profundidade em Spring Boot, JPA, Design Patterns, SOLID |
 | Quem está se preparando pra entrevista | Cobertura dos tópicos clássicos: Collections, Streams, concorrência |
-| Autodidata que se perde em tutoriais | Uma fonte centralizada que lembra do contexto |
+| Pessoa curiosa sobre Java | Uma porta de entrada acessível e sem jargões intimidadores |
 
 ---
 
@@ -181,10 +187,26 @@ Agnes cobre 15 áreas do ecossistema Java, cada uma com profundidade progressiva
 
 ---
 
+## Roadmap: o que vem na v2.0
+
+A versão 1.0 entrega a experiência core: conversar com a Agnes, persistir histórico e ter segurança contra prompt injection. Mas analisando a estrutura atual, já dá pra ver onde o projeto pode crescer.
+
+**Autenticação de usuários.** Hoje qualquer pessoa que acessa a URL compartilha o mesmo espaço de conversas. Na v2.0, cada aluno teria seu login (OAuth2 com Google/GitHub via Spring Security), com conversas privadas e perfil próprio.
+
+**Painel de progresso.** Com o histórico persistido no banco, já existe a base de dados pra construir um dashboard que mostre quais domínios o aluno mais explorou, quais ainda não tocou, e sugerir próximos passos. Uma espécie de trilha de aprendizado gerada automaticamente.
+
+**Modo quiz.** Agnes já sabe adaptar o nível da resposta. O próximo passo natural é usar isso pra gerar quizzes interativos: perguntas de múltipla escolha, desafios de código, e exercícios práticos com correção automática.
+
+**Exportação de conversas.** Permitir que o aluno exporte suas conversas como PDF ou Markdown, pra usar como material de estudo offline ou como anotações pessoais.
+
+**Suporte a múltiplos modelos.** A arquitetura com Spring AI já abstrai o provedor de IA. Na v2.0, o aluno poderia escolher entre diferentes modelos (Gemini, Claude, GPT) dependendo da necessidade, ou o sistema alternaria automaticamente em caso de indisponibilidade.
+
+**Modo colaborativo.** Permitir que dois alunos compartilhem uma sessão de conversa com a Agnes, útil para estudo em dupla ou pair programming assistido.
+
+---
+
 <div align="center">
 
 Desenvolvido por [sparda.DEV](https://github.com/raphasparda)
-
-*Agnes pode cometer erros. Sempre verifique informações importantes.*
 
 </div>
