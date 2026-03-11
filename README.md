@@ -2,7 +2,7 @@
 
 # Prof. Agnes `v1.0`
 
-**Mentora de Java com IA. Do júnior ao pleno.**
+**Mentora de Java com IA.**
 
 <br>
 
