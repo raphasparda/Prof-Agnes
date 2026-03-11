@@ -25,7 +25,7 @@ public class Mensagem {
     private String remetente;
 
     @JsonProperty("content")
-    @Column(name = "content", columnDefinition = "CLOB", nullable = false)
+    @Column(name = "content", columnDefinition = "TEXT", nullable = false)
     private String conteudo;
 
     @Column(nullable = false)
