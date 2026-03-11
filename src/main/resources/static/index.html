@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Agnes - Sua mentora de Java, do júnior ao pleno">
+    <title>Agnes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=7">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+
+<body>
+    <!-- SVG do gato -->
+    <svg viewBox="0 0 150 150" width="1" id="root">
+        <defs>
+            <symbol id="thecat" viewBox="0 0 120 120">
+                <path id="snout" d="M60.355,68.971c-6.096,4.684-10.809,5.317-14.413,1.48c-1.275-1.358-2.395-4.752-1.638-5.77
+                c2.121-2.854,3.688-0.457,5.209,1.514c2.111,2.736,4.582,1.498,6.422-0.305c1.678-1.644,3.942-3.74,0.751-6.146
+                c-2.091-1.576-3.138-4.14-0.671-5.119c2.697-1.071,5.708-1.523,9.052,0.185c1.635,1.414,0.174,3.384-0.792,4.443
+                c-2.604,2.858-1.254,5.079,0.871,6.749c2.289,1.797,4.898,2.686,7.205-0.719c0.805-1.188,3.344-2.668,4.506-2.141
+                c1.494,1.119,0.793,3.934,0.064,5.301C73.988,73.949,67.191,74.123,60.355,68.971z" />
+                <g id="ears">
+                    <path id="l_ear" d="M0.549,22.902C0.359,11.312,5.463,4.237,16.305,1.164c1.019-0.288,2.954-0.062,3.52,0.778
+                c0.969,2.364-1.785,4.089-2.219,4.324C9.243,10.795,5.687,17.926,6.16,27.271c-0.148,3.132-1.513,5.434-3.065,5.434
+                c-1.519,0-2.132-2.443-2.44-3.834C0.231,26.969,0.549,24.9,0.549,22.902z" />
+                    <path id="r_ear" d="M119.779,28.871c-0.309,1.391-0.922,3.834-2.441,3.834c-1.551,0-2.916-2.302-3.064-5.434
+                c0.473-9.345-3.083-16.476-11.445-21.005c-0.435-0.235-3.188-1.96-2.22-4.324c0.566-0.84,2.501-1.066,3.521-0.778
+                c10.842,3.073,15.945,10.148,15.756,21.738C119.885,24.9,120.203,26.969,119.779,28.871z" />
+                </g>
+            </symbol>
+            <g id="wiskers">
+                <symbol id="_lb_wisker" viewBox="0 0 120 120">
+                    <path id="lb_wisker"
+                        d="M28.962,72.202c0.875,2.007-13.469,10.183-14.186,8.491C12.966,77.405,28.079,70.452,28.962,72.202z" />
+                </symbol>
+                <symbol id="_lt_wisker" viewBox="0 0 120 120">
+                    <path id="lt_wisker"
+                        d="M25.74,66.219c0.455,1.896-14.707,7.321-15.318,4.727C9.845,68.933,24.709,63.314,25.74,66.219z" />
+                </symbol>
+                <symbol id="_rb_wisker" viewBox="0 0 120 120">
+                    <path id="rb_wisker"
+                        d="M106.629,80.693c-0.716,1.691-15.061-6.484-14.186-8.491C93.327,70.452,108.439,77.405,106.629,80.693z" />
+                </symbol>
+                <symbol id="_rt_wisker" viewBox="0 0 120 120">
+                    <path id="rt_wisker"
+                        d="M110.984,70.945c-0.611,2.595-15.773-2.83-15.318-4.727C96.697,63.314,111.562,68.933,110.984,70.945z" />
+                </symbol>
+            </g>
+            <symbol id="eyes" viewBox="0 0 120 120">
+                <circle id="R_eye" r="7" cx="91" cy="45" />
+                <use xlink:href="#R_eye" transform="translate(-60.5,0)" />
+            </symbol>
+            <g id="theHex">
+                <path id="hx" d="M66.34,10 
+                   Q75,5 83.66,10 
+                   L126.96,35 
+                   Q135.62,40 135.62,50
+                   L135.62,100 
+                   Q135.62,110 126.96,115
+                   L83.66,140 
+                   Q75,145 66.34,140
+                   L23,115 Q14.38,110 14.38,100
+                   L14.38,50 
+                   Q14.38,40 23,35Z"></path>
+            </g>
+        </defs>
+    </svg>
+
+    <div class="app" id="app">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="brand">
+                    <h1 class="brand-name">Histórico de conversas</h1>
+                </div>
+                <button class="btn-new-chat" id="btn-new-chat" title="Nova conversa">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="conversation-list" id="conversation-list">
+                <!-- renderiza as conversasd -->
+            </div>
+            <div class="sidebar-footer">
+                <div class="sidebar-footer-text">Desenvolvido por sparda.DEV</div>
+            </div>
+        </aside>
+
+        <!-- area principal do chat -->
+        <main class="chat-main">
+            <!-- Mobile Header -->
+            <header class="chat-header">
+                <button class="btn-menu" id="btn-menu" title="Menu">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+                <div class="chat-header-info">
+                    <span class="chat-header-name">Agnes</span>
+                    <span class="chat-header-status">online</span>
+                </div>
+                <div class="chat-header-avatar">
+                    <div class="b">
+                        <svg viewBox="0 0 150 150" class="used">
+                            <use xlink:href="#theHex" class="theHex" fill="#ffca5e" />
+                            <use xlink:href="#_lb_wisker" class="use_lb" width="110" x="20" y="15" />
+                            <use xlink:href="#_lt_wisker" class="use_lt" width="110" x="20" y="15" />
+                            <use xlink:href="#_rb_wisker" class="use_rb" width="110" x="20" y="15" />
+                            <use xlink:href="#_rt_wisker" class="use_rt" width="110" x="20" y="15" />
+                            <use xlink:href="#eyes" class="use_eyes" width="110" x="20" y="15" />
+                            <path class="tongue" d="M75 97H65A5,10 0 0 0 85,97z" />
+                            <use xlink:href="#thecat" width="110" x="20" y="15" />
+                        </svg>
+                    </div>
+                </div>
+            </header>
+
+            <!-- mensagens -->
+            <div class="messages-container" id="messages-container">
+                <div class="messages" id="messages">
+                    <!-- Welcome state -->
+                    <div class="welcome" id="welcome">
+                        <div class="welcome-icon">
+                            <div class="b">
+                                <svg viewBox="0 0 150 150" class="used">
+                                    <use xlink:href="#theHex" class="theHex" fill="#ffae3e" />
+                                    <use xlink:href="#_lb_wisker" class="use_lb" width="110" x="20" y="15" />
+                                    <use xlink:href="#_lt_wisker" class="use_lt" width="110" x="20" y="15" />
+                                    <use xlink:href="#_rb_wisker" class="use_rb" width="110" x="20" y="15" />
+                                    <use xlink:href="#_rt_wisker" class="use_rt" width="110" x="20" y="15" />
+                                    <use xlink:href="#eyes" class="use_eyes" width="110" x="20" y="15" />
+                                    <path class="tongue" d="M75 97H65A5,10 0 0 0 85,97z" />
+                                    <use xlink:href="#thecat" width="110" x="20" y="15" />
+                                </svg>
+                            </div>
+                        </div>
+                        <h2 class="welcome-title">Olá! Eu sou a Agnes</h2>
+                        <p class="welcome-text">Sua mentora de Java, do júnior ao pleno. Pode me perguntar qualquer
+                            coisa sobre Java, Spring Boot, boas práticas e muito mais!</p>
+
+                        <div class="name-prompt" id="global-name-prompt"
+                            style="display: flex; flex-direction: column; align-items: center; gap: 8px; width: 100%; margin-bottom: 24px;">
+                            <p style="color: var(--text-secondary); font-size: 14px; margin: 0;">Como posso te chamar?
+                            </p>
+                            <div style="display: flex; gap: 8px;">
+                                <input type="text" id="global-user-name" placeholder="Seu nome..."
+                                    style="padding: 10px 16px; border-radius: var(--radius-full); border: 1px solid var(--border); outline: none; font-family: inherit; width: 200px; background: var(--bg-input); font-size: 14px;">
+                                <button id="btn-submit-global-name" class="suggestion"
+                                    style="background: var(--accent); color: white; border-color: var(--accent); white-space: nowrap;">Pronto</button>
+                            </div>
+                        </div>
+
+                        <div class="welcome-suggestions" id="welcome-suggestions"
+                            style="opacity: 0.5; pointer-events: none; transition: opacity 0.3s ease;">
+                            <button class="suggestion" data-message="Sou iniciante em Java, por onde começo?">Começar em
+                                Java</button>
+                            <button class="suggestion" data-message="Me explica como funciona Spring Boot">Spring
+                                Boot</button>
+                            <button class="suggestion"
+                                data-message="Quais padrões de projeto são mais usados em Java?">Design
+                                Patterns</button>
+                            <button class="suggestion" data-message="Me ajuda a entender Stream API com exemplos">Stream
+                                API</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-area">
+                <div class="input-wrapper">
+                    <textarea class="message-input" id="message-input" placeholder="Escreva sua mensagem..." rows="1"
+                        maxlength="4000"></textarea>
+                    <button class="btn-send" id="btn-send" title="Enviar" disabled>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </div>
+                <div class="input-footer">Agnes pode cometer erros. Então sempre verifique informações importantes.
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- overlay do mobile -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- remove o botão do svg -->
+
+    <script src="app.js?v=7"></script>
+</body>
+
+</html>
