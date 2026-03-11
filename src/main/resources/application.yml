@@ -12,12 +12,12 @@ spring:
             model: gemini-2.5-flash
             temperature: 0.8
 
-  # h2 um database basico
+  # configuracao de banco de dados (H2 local / PostgreSQL nuvem)
   datasource:
-    url: jdbc:h2:file:./data/agnes-db;DB_CLOSE_ON_EXIT=TRUE;AUTO_SERVER=TRUE
-    driver-class-name: org.h2.Driver
-    username: sa
-    password:
+    url: ${SPRING_DATASOURCE_URL:jdbc:h2:file:./data/agnes-db;DB_CLOSE_ON_EXIT=TRUE;AUTO_SERVER=TRUE}
+    driver-class-name: ${SPRING_DATASOURCE_DRIVER_CLASS_NAME:org.h2.Driver}
+    username: ${SPRING_DATASOURCE_USERNAME:sa}
+    password: ${SPRING_DATASOURCE_PASSWORD:}
 
   jpa:
     hibernate:
