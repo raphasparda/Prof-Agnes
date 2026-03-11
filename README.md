@@ -30,6 +30,10 @@ O projeto nasceu pensando em três perfis: o **estudante** que está começando 
 
 ---
 
+> **Quer testar localmente?** Crie uma chave gratuita no [Google AI Studio](https://aistudio.google.com/app/apikey) e adicione no arquivo `.env` na raiz do projeto como `GOOGLE_GENAI_API_KEY=sua_chave_aqui`. A aplicação lê essa variável automaticamente na inicialização.
+
+---
+
 ## De onde vem o nome e o visual
 
 A paleta de cores, a personalidade acolhedora e o mascote hexagonal foram todos inspirados na minha gata de estimação. A escolha foi proposital. O mundo tech tem uma tendência forte de visual agressivo, temas escuros, interfaces intimidadoras. Agnes vai na direção oposta: tons quentes, traços suaves e uma identidade que passa conforto antes de qualquer outra coisa.
