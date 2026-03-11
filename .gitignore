@@ -1,7 +1,7 @@
-# Build output
+
 target/
 
-# IDE
+
 .idea/
 *.iml
 .vscode/
@@ -9,21 +9,21 @@ target/
 .project
 .classpath
 
-# H2 database files
+
 data/
 
-# Maven wrapper jar
+
 .mvn/wrapper/maven-wrapper.jar
 
-# OS files
+
 .DS_Store
 Thumbs.db
 *.swp
 
-# Logs
+
 *.log
 *.txt
 
-# Segredos Locais
+
 .env
 .env.*
