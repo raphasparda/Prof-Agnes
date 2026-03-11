@@ -30,7 +30,7 @@ O projeto nasceu pensando em três perfis: o **estudante** que está começando 
 
 ---
 
-> **Quer testar localmente?** Crie uma chave gratuita no [Google AI Studio](https://aistudio.google.com/app/apikey) e adicione no arquivo `.env` na raiz do projeto como `GOOGLE_GENAI_API_KEY=sua_chave_aqui`. A aplicação lê essa variável automaticamente na inicialização.
+> **Quer testar localmente?** É só criar uma chave gratuita em [Google AI Studio](https://aistudio.google.com/app/apikey) depois adicione no arquivo `.env` na raiz do projeto como `GOOGLE_GENAI_API_KEY=SUACHAVEEE`. A aplicação lê essa variável automaticamente na inicialização da aplicação.
 
 ---
 
